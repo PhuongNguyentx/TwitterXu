@@ -17,7 +17,7 @@ class TweetsViewController: UIViewController {
     var isMoreDataLoading = false
     let refreshControl = UIRefreshControl()
     var loadingMoreView:InfiniteScrollActivityView?
-    
+    var user: User!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,6 +78,12 @@ class TweetsViewController: UIViewController {
             if let nvc = segue.destination as? UINavigationController, let tweetDetailVC = nvc.topViewController as? TweetDetailViewController {
                 let ip = tableView.indexPathForSelectedRow
                 tweetDetailVC.tweet = tweets[(ip?.row)!]
+            }
+        }
+        if segue.identifier == "updateTweet1" {
+            if let nvc = segue.destination as? UINavigationController, let updateTweetVC = nvc.topViewController as? UpdateTweetViewController {
+                updateTweetVC.user = User.currentUser
+        
             }
         }
     }

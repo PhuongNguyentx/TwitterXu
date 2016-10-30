@@ -17,6 +17,7 @@ class TweetDetailViewController: UIViewController {
     @IBOutlet weak var screenNameDetail: UILabel!
     
     var tweet: Tweet!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +41,25 @@ class TweetDetailViewController: UIViewController {
     @IBAction func onHome(_ sender: Any) {
          dismiss(animated: true, completion: nil)
     }
-    @IBAction func onTweet(_ sender: Any) {
-         dismiss(animated: true, completion: nil)
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+                if segue.identifier == "updateTweet" {
+                    if let nvc = segue.destination as? UINavigationController, let updateTweetVC = nvc.topViewController as? UpdateTweetViewController {
+//                        TwitterClient.sharedInstance?.currentAcount(success: { (user: User) in
+//                            User.currentUser = user
+//                        }, failure: { (error: Error) in
+//                            print(error.localizedDescription)
+//                        })
+                        updateTweetVC.user = User.currentUser
+                    }
+                }
+    }
+
 
     /*
     // MARK: - Navigation

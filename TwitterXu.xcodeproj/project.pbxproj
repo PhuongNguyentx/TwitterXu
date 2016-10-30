@@ -19,6 +19,7 @@
 		96E8FE601DC4CF3D00B5CD97 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8FE5F1DC4CF3D00B5CD97 /* TweetsViewController.swift */; };
 		96E8FE621DC5982900B5CD97 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8FE611DC5982900B5CD97 /* TweetCell.swift */; };
 		96EB60F31DC5E7F000539DC7 /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB60F21DC5E7F000539DC7 /* InfiniteScrollActivityView.swift */; };
+		96EEC6CB1DC64C3F008C6EA2 /* UpdateTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EEC6CA1DC64C3F008C6EA2 /* UpdateTweetViewController.swift */; };
 		96F3C1571DC5CFBA009FABB1 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F3C1561DC5CFBA009FABB1 /* TweetDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		96E8FE5F1DC4CF3D00B5CD97 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 		96E8FE611DC5982900B5CD97 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		96EB60F21DC5E7F000539DC7 /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
+		96EEC6CA1DC64C3F008C6EA2 /* UpdateTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTweetViewController.swift; sourceTree = "<group>"; };
 		96F3C1561DC5CFBA009FABB1 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 				96E187BC1DC445330037FD09 /* LoginViewController.swift */,
 				96E8FE5F1DC4CF3D00B5CD97 /* TweetsViewController.swift */,
 				96F3C1561DC5CFBA009FABB1 /* TweetDetailViewController.swift */,
+				96EEC6CA1DC64C3F008C6EA2 /* UpdateTweetViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				96F3C1571DC5CFBA009FABB1 /* TweetDetailViewController.swift in Sources */,
 				960E728F1DC4AEFC00E3AA0E /* User.swift in Sources */,
 				960E72911DC4AF1A00E3AA0E /* Tweet.swift in Sources */,
+				96EEC6CB1DC64C3F008C6EA2 /* UpdateTweetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

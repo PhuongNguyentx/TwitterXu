@@ -15,6 +15,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     
     var loginSuccess: (() -> ())?
     var loginFailure: ((Error) -> ())?
+    var params:[String:String] = ["count" : "20","status": ""]
     
     func login(success: @escaping ()->(), failure: @escaping (Error) -> ()) {
         loginSuccess = success
@@ -57,7 +58,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     }
     
     func homeTimeline(success: @escaping ([Tweet]) -> (), failure: @escaping (Error) ->()) {
-        get("1.1/statuses/home_timeline.json", parameters: nil, progress: nil, success: { (task: URLSessionDataTask, response) in
+        get("1.1/statuses/home_timeline.json", parameters: params, progress: nil, success: { (task: URLSessionDataTask, response) in
             let dictionaries = response as! [NSDictionary]
             let tweets = Tweet.tweetsWithArray(dictionaries: dictionaries)
             success(tweets)
@@ -74,6 +75,15 @@ class TwitterClient: BDBOAuth1SessionManager {
             success(user)
             
         }, failure: { (task: URLSessionDataTask?, error: Error) in
+            failure(error)
+        })
+    }
+    func updateTweet(success: @escaping ([Tweet]) -> (), failure: @escaping (Error) ->()) {
+        get("1.1/statuses/update.json", parameters: params, progress: nil, success: { (task: URLSessionDataTask, response) in
+            let dictionaries = response as! [NSDictionary]
+            let tweets = Tweet.tweetsWithArray(dictionaries: dictionaries)
+            success(tweets)
+        }, failure: { (task: URLSessionDataTask?, error: Error) -> Void in
             failure(error)
         })
     }
